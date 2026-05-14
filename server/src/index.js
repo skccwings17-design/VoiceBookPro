@@ -30,3 +30,5 @@ const server = app.listen(config.port, () => {
 // Cloud Run timeout settings
 server.keepAliveTimeout = 620 * 1000;
 server.headersTimeout = 630 * 1000;
+
+// Trigger redeploy with fixed credentials
