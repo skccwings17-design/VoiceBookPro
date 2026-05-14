@@ -25,15 +25,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Decode GCP Credentials
-        run: echo "${{ secrets.GCP_CREDENTIALS }}" | base64 -d > gcp-key.json
-        shell: bash
-
       - name: Set up Cloud SDK and Auth
         uses: google-github-actions/setup-gcloud@v2
 
       - name: Authenticate with Service Account
         run: |
+          echo '${{ secrets.GCP_CREDENTIALS }}' > gcp-key.json
           gcloud auth activate-service-account --key-file=gcp-key.json
           gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
         shell: bash
