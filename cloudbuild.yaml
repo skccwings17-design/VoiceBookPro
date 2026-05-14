@@ -1,0 +1,31 @@
+steps:
+  # 1. Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/voicebook-pro-repo/voicebook-pro-server:$COMMIT_SHA', './server']
+
+  # 2. Push the container image to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/voicebook-pro-repo/voicebook-pro-server:$COMMIT_SHA']
+
+  # 3. Deploy to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'voicebook-pro-server'
+      - '--image'
+      - 'us-central1-docker.pkg.dev/$PROJECT_ID/voicebook-pro-repo/voicebook-pro-server:$COMMIT_SHA'
+      - '--region'
+      - 'us-central1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--set-env-vars'
+      - 'GCP_PROJECT_ID=$PROJECT_ID'
+
+images:
+  - 'us-central1-docker.pkg.dev/$PROJECT_ID/voicebook-pro-repo/voicebook-pro-server:$COMMIT_SHA'
+
+options:
+  logging: CLOUD_LOGGING_ONLY

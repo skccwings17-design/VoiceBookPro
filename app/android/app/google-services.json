@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "916847589107",
+    "project_id": "voicebook-flutter-pro",
+    "storage_bucket": "voicebook-flutter-pro.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916847589107:android:68ebbe06351970b42ee986",
+        "android_client_info": {
+          "package_name": "com.hanuland.voicebook_pro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916847589107-7bu74flfvu9vb112k8ogour4srknj5v2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkRk1bbVI-ib_LcHdeqlKb4lrw5qB2xSw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916847589107-7bu74flfvu9vb112k8ogour4srknj5v2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "916847589107-8o98pf08afh814k0gqlqjsrfad0rijn7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hanuland.voicebook-pro"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
