@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import '../models/models.dart';
 
 class ApiService {
-  final String baseUrl = 'https://voicebook-pro-server-xxxxx.a.run.app'; // Placeholder
+  final String baseUrl = 'https://voicebook-pro-server-916847589107.us-central1.run.app';
   String? _authToken;
 
   void updateToken(String? token) {
