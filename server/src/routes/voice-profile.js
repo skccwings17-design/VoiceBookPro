@@ -1,5 +1,5 @@
 const express = require('express');
-const admin = require('cloud-functions'); // Using admin to access Firestore
+const admin = require('firebase-admin'); // Fixed from cloud-functions
 const { verifyToken } = require('../middleware/auth');
 const { v4: uuidv4 } = require('uuid');
 

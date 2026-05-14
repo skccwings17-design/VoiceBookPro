@@ -22,7 +22,7 @@ steps:
       - 'managed'
       - '--allow-unauthenticated'
       - '--set-env-vars'
-      - 'GCP_PROJECT_ID=$PROJECT_ID'
+      - 'GCP_PROJECT_ID=$PROJECT_ID,GEMINI_API_KEY=$_GEMINI_API_KEY'
 
 images:
   - 'us-central1-docker.pkg.dev/$PROJECT_ID/voicebook-pro-repo/voicebook-pro-server:$COMMIT_SHA'
